@@ -3,9 +3,9 @@
     <!-- Apollo Query for Category-->
   <ApolloQuery :query="require('@/graphql/queries/Categories.gql')">
     <!-- The result will automatically updated -->
-    <template slot-scope="{ result: { data, loading } , isloading}">
+    <template slot-scope="{ result: { data, loading } , isLoading}">
       <!-- Some content -->
-      <div v-if="isloading">Loading...</div>
+      <div v-if="isLoading">Loading...</div>
       <div v-else>
         <a href="#" v-for="category of data.categories" :key="category.id" class="category">
           {{ category.id }}. {{ category.name }}
@@ -20,9 +20,9 @@
       <!-- Some content -->
       <div v-if="isloading">Loading...</div>
       <div v-else>
-        <a href="#" v-for="book of data.books" :key="book.id">
+        <div v-for="book of data.books" :key="book.id">
           {{ book.id }}. {{ book.title }}
-        </a>
+        </div>
       </div>
     </template>
   </ApolloQuery>
